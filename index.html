@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local tools for personal use | localtools.xyz</title>
+    <style>
+        .p-5{
+            padding: 2.5em;
+        }
+        .w-100{
+            width: 100%;
+            
+        }
+        .h-90vh{
+            height: 90vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="p-5">
+        <h1>localtools.xyz</h1>
+        <textarea id="note" onkeyup="storeOnLocal()" class="w-100 h-90vh" placeholder="Write some here..."></textarea>
+    </div>
+    <script>
+        (function() {
+            let note = document.getElementById('note');
+            note.value = localStorage.getItem('note');
+         })();
+        function storeOnLocal() {
+            let data = document.getElementById('note');
+            localStorage.setItem('note', data.value)
+        }
+    </script>
+</body>
+</html>
